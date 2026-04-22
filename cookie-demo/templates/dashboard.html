@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <p>Logged in as: <strong>{{ username }}</strong></p>
+    <p>Mode: <strong>{{ mode }}</strong></p>
+
+    {% if is_secure_mode %}
+        <p>This mode uses <code>HttpOnly</code> and <code>SameSite="Strict"</code>.</p>
+        <p>The session cookie should not be visible to JavaScript.</p>
+    {% else %}
+        <p>This mode leaves the cookie readable to JavaScript.</p>
+        <p> attack button captures the session cookie.</p>
+    {% endif %}
+
+    <p>Server session ID view: <code><strong>{{ session_id }}</strong></code></p>
+
+    <button
+        id="steal-button"
+        data-mode="{{ mode }}"
+        data-username="{{ username }}"
+    >
+        Simulate Cookie Theft
+    </button>
+
+    <pre id="result-box">Click the button to try reading document.cookie.</pre>
+
+    <p><a href="/attacker">Open attacker page</a></p>
+    <p><a href="/logout">Logout</a></p>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

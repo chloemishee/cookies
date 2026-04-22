@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attacker Page</title>
+</head>
+<body>
+    <h1>Attacker View</h1>
+    <p>This page shows cookies captured by the local demo attacker endpoint.</p>
+
+    {% if stolen_cookies %}
+        <ul>
+            {% for item in stolen_cookies %}
+                <li>
+                    user={{ item.username }} |
+                    mode={{ item.mode }} |
+                    stolen={{ item.cookie }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No stolen cookies recorded yet.</p>
+    {% endif %}
+
+    <p><a href="/">Back to login</a></p>
+</body>
+</html>

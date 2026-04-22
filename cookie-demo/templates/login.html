@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie Login</title>
+</head>
+<body>
+    <h1>Cookie Demo</h1>
+    <p>mockup login site that stores cookies</p>
+
+
+    <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input id="username" name="username" type="text" placeholder="student123">
+
+        <p>Mode:</p>
+        <label>
+            <input type="radio" name="mode" value="vulnerable" checked>
+            Vulnerable
+        </label>
+        <label>
+            <input type="radio" name="mode" value="secure">
+            Secure
+        </label>
+
+        <br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <p><a href="/attacker">View attacker page</a></p>
+</body>
+</html>
