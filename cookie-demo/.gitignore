@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+
+# macOS
+.DS_Store
+
+# Flask stuff
+instance/
+*.db
+
+# Logs
+*.log
